@@ -174,7 +174,8 @@ extern "C" {
 /* Buttons for the RetroPad (JOYPAD).
  * The placement of these is equivalent to placements on the 
  * Super Nintendo controller.
- * L2/R2/L3/R3 buttons correspond to the PS1 DualShock. */
+ * L2/R2/L3/R3 buttons correspond to the PS1 DualShock.
+ * Analog stick directions and clicks used for keypad. */
 #define RETRO_DEVICE_ID_JOYPAD_B        0
 #define RETRO_DEVICE_ID_JOYPAD_Y        1
 #define RETRO_DEVICE_ID_JOYPAD_SELECT   2
@@ -193,10 +194,14 @@ extern "C" {
 #define RETRO_DEVICE_ID_JOYPAD_R3      15
 
 /* Index / Id values for ANALOG device. */
-#define RETRO_DEVICE_INDEX_ANALOG_LEFT   0
-#define RETRO_DEVICE_INDEX_ANALOG_RIGHT  1
-#define RETRO_DEVICE_ID_ANALOG_X         0
-#define RETRO_DEVICE_ID_ANALOG_Y         1
+#define RETRO_DEVICE_INDEX_ANALOG_LEFT   13
+#define RETRO_DEVICE_INDEX_ANALOG_RIGHT  11
+#define RETRO_DEVICE_INDEX_ANALOG_UP	 12
+#define RETRO_DEVICE_INDEX_ANALOG_DOWN   10
+#define RETRO_DEVICE_ID_ANALOG_LEFT      1
+#define RETRO_DEVICE_ID_ANALOG_RIGHT     1
+#define RETRO_DEVICE_ID_ANALOG_UP        2
+#define RETRO_DEVICE_ID_ANALOG_DOWN      2
 
 /* Id values for MOUSE. */
 #define RETRO_DEVICE_ID_MOUSE_X                0
