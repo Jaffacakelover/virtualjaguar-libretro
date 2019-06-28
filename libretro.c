@@ -133,8 +133,8 @@ static void update_input(void)
 
    joypad0Buttons[BUTTON_U]      = 0x00;
    joypad0Buttons[BUTTON_D]      = 0x00;
-   joypad0Buttons[BUTTON_L]      = 0x00;
-   joypad0Buttons[BUTTON_R]      = 0x00;
+   joypad1Buttons[BUTTON_L]		 = 0x00;
+   joypad1Buttons[BUTTON_R]		 = 0x00;
    joypad0Buttons[BUTTON_A]      = 0x00;
    joypad0Buttons[BUTTON_B]      = 0x00;
    joypad0Buttons[BUTTON_C]      = 0x00;
@@ -147,7 +147,12 @@ static void update_input(void)
    joypad0Buttons[BUTTON_4]      = 0x00;
    joypad0Buttons[BUTTON_5]      = 0x00;
    joypad0Buttons[BUTTON_6]      = 0x00;
-
+   joypad0Buttons[BUTTON_7]		 = 0x00;
+   joypad0Buttons[BUTTON_8]		 = 0x00;
+   joypad0Buttons[BUTTON_9]		 = 0x00;
+   joypad0Buttons[BUTTON_s]		 = 0x00;
+   joypad0Buttons[BUTTON_d]		 = 0x00;
+ 
    joypad1Buttons[BUTTON_U]      = 0x00;
    joypad1Buttons[BUTTON_D]      = 0x00;
    joypad1Buttons[BUTTON_L]      = 0x00;
@@ -170,33 +175,43 @@ static void update_input(void)
    if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN))
       joypad0Buttons[BUTTON_D] = 0xff;
    if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT))
-      joypad0Buttons[BUTTON_L] = 0xff;
+	   joypad0Buttons[BUTTON_L] = 0xff;
    if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT))
-      joypad0Buttons[BUTTON_R] = 0xff;
-   if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_A))
-      joypad0Buttons[BUTTON_A] = 0xff;
+	   joypad0Buttons[BUTTON_R] = 0xff;
    if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_B))
+      joypad0Buttons[BUTTON_A] = 0xff;
+   if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_A))
       joypad0Buttons[BUTTON_B] = 0xff;
-   if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y))
+   if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_X))
       joypad0Buttons[BUTTON_C] = 0xff;
    if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT))
       joypad0Buttons[BUTTON_PAUSE] = 0xff;
    if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START))
       joypad0Buttons[BUTTON_OPTION] = 0xff;
-   if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_X))
-      joypad0Buttons[BUTTON_0] = 0xff;
-   if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L))
-      joypad0Buttons[BUTTON_1] = 0xff;
-   if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R))
-      joypad0Buttons[BUTTON_2] = 0xff;
+   if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y))
+	  joypad0Buttons[BUTTON_0] = 0xff;
    if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2))
+      joypad0Buttons[BUTTON_1] = 0xff;
+   if ((input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2))
+      joypad0Buttons[BUTTON_2] = 0xff;
+   if (input_state_cb(0, RETRO_DEVICE_ANALOG, RETRO_DEVICE_INDEX_ANALOG_LEFT, RETRO_DEVICE_ID_ANALOG_Y))
       joypad0Buttons[BUTTON_3] = 0xff;
-   if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2))
+   if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L))
       joypad0Buttons[BUTTON_4] = 0xff;
    if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L3))
       joypad0Buttons[BUTTON_5] = 0xff;
-   if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R3))
+   if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R)
       joypad0Buttons[BUTTON_6] = 0xff;
+   if (input_state_cb(0, RETRO_DEVICE_ANALOG, RETRO_DEVICE_INDEX_ANALOG_LEFT, RETRO_DEVICE_ID_ANALOG_X))
+	   joypad0Buttons[BUTTON_7] = 0xff;
+   if (input_state_cb(0, RETRO_DEVICE_ANALOG, RETRO_DEVICE_INDEX_ANALOG_RIGHT, RETRO_DEVICE_ID_ANALOG_Y))
+	   joypad0Buttons[BUTTON_8] = 0xff;
+   if (input_state_cb(0, RETRO_DEVICE_ANALOG, RETRO_DEVICE_INDEX_ANALOG_RIGHT, RETRO_DEVICE_ID_ANALOG_X))
+	   joypad0Buttons[BUTTON_9] = 0xff;
+   if (input_state_cb(0, RETRO_DEVICE_ANALOG, RETRO_DEVICE_INDEX_ANALOG_RIGHT, RETRO_DEVICE_ID_ANALOG_Y))
+	   joypad0Buttons[BUTTON_s] = 0xff;
+   if (input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R3))
+	   joypad0Buttons[BUTTON_d] = 0xff;
 
    if (input_state_cb(1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP))
       joypad1Buttons[BUTTON_U] = 0xff;
@@ -338,6 +353,10 @@ bool retro_load_game(const struct retro_game_info *info)
       { 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R3,    "Numpad 6" },
       { 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT, "Pause" },
       { 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START, "Option" },
+	  { 0, RETRO_DEVICE_ANALOG, RETRO_DEVICE_INDEX_ANALOG_LEFT , RETRO_DEVICE_ID_ANALOG_X, "Left Control Stick X" },\
+	  { 0, RETRO_DEVICE_ANALOG, RETRO_DEVICE_INDEX_ANALOG_LEFT , RETRO_DEVICE_ID_ANALOG_Y, "Left Control Stick Y" },\
+	  { 0, RETRO_DEVICE_ANALOG, RETRO_DEVICE_INDEX_ANALOG_RIGHT, RETRO_DEVICE_ID_ANALOG_X, "Right Control Stick X" },\
+	  { 0, RETRO_DEVICE_ANALOG, RETRO_DEVICE_INDEX_ANALOG_RIGHT, RETRO_DEVICE_ID_ANALOG_Y, "Right Control Stick Y" },
 
       { 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT,  "D-Pad Left" },
       { 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP,    "D-Pad Up" },

@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\docs",
+    "\\jni",
+    "\\libretro-common",
+    "\\libretro-common\\include",
+    "\\libretro-common\\include\\compat",
+    "\\libretro-common\\include\\compat\\msvc",
+    "\\src",
+    "\\src\\m68000"
+  ],
+  "SelectedNode": "\\Makefile",
+  "PreviewInSolutionExplorer": false
+}
